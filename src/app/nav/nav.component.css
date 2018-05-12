@@ -1,0 +1,11 @@
+
+
+.logo { width: 20%; height: 15%; display: block; text-indent: -9999px;}
+.card {
+    font-size: 25px;
+}
+
+.center {
+    text-align: center;
+    border-bottom: 1px solid #8c8b8b;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+
+<div *ngIf="valid; then dashboard"></div>
+
+
+<ng-template #dashboard>
+
+    <app-nav></app-nav>
+
+    <!-- <router-outlet></router-outlet>   -->
+    <app-chart></app-chart>   
+    
+    <app-footer></app-footer>
+
+</ng-template>
+
+
+</div>
