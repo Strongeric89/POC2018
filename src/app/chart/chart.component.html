@@ -1,77 +1,83 @@
-<h1>chainID: example_exec</h1>
-<h5>ID: src</h5>
-<h4>Training</h4>
-<h5> dataframeRowCount: 48842</h5>
-<hr>
+<h1 align="center">chainID: example_exec</h1>
+<div style="display: block" style="margin-bottom:3%;">
 
+    <h5>ID: src</h5>
+    <h4>Training</h4>
+    <h5> dataframeRowCount: 48842</h5>
+    <hr>
 
+</div>
 
-<div class="container">
-        <div class="row">
-          <div class="col-sm">
-                <div style="display: block">
-                        <h5>ID: 0</h5>
-                        <h4>SlicedData</h4>
-                        <canvas mdbChart 
-                            [chartType]="chartType"
-                            [datasets]="chartDatasets" 
-                            [labels]="chartLabels"
-                            [colors]="chartColors"
-                            [options]="chartOptions"
-                            [legend]="true"
-                            (chartHover)="chartHovered($event)" 
-                            (chartClick)="chartClicked($event)">
-                        </canvas>
-                    </div>
-                    <br>
-          </div>
-          <div class="col-sm">
-                <div style="display: block">
-                        <h5>Id : 1</h5>
-                        <h4>Princomps</h4>
-                    <canvas mdbChart 
-                        [chartType]="chartType1"
-                        [datasets]="chartDatasets1" 
-                        [labels]="chartLabels1"
-                        [colors]="chartColors1"
-                        [options]="chartOptions1"
-                        [legend]="true"
-                        (chartHover)="chartHovered1($event)" 
-                        (chartClick)="chartClicked1($event)">
-                    </canvas>
-                </div>
-                <br>
-          </div>
-          <div class="col-sm">
-                <div style="display: block">
-                        <h5>Id : 2</h5>
-                        <h4>Predicted Data</h4>
-                        <h4> /tmp/sap/reboot//example_exec/application_1524240965008_0692/2</h4>
-                    <canvas mdbChart 
-                        [chartType]="chartType2"
-                        [datasets]="chartDatasets2" 
-                        [labels]="chartLabels2"
-                        [colors]="chartColors2"
-                        [options]="chartOptions2"
-                        [legend]="true"
-                        (chartHover)="chartHovered2($event)" 
-                        (chartClick)="chartClicked2($event)">
-                    </canvas>
-                </div>
-          </div>
-          <br> 
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="d-block w-100" style="display: block">
+                <h5>ID: 0</h5>
+                <h4>SlicedData</h4>
+                <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions"
+                    [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                </canvas>
+            </div>
+
         </div>
-      </div>
+        <div class="carousel-item">
+            <div class="d-block w-100" style="display: block">
+                <div style="display: block">
+                    <h5>Id : 1</h5>
+                    <h4>Princomps</h4>
+                    <canvas mdbChart [chartType]="chartType1" [datasets]="chartDatasets1" [labels]="chartLabels1" [colors]="chartColors1" [options]="chartOptions1"
+                        [legend]="true" (chartHover)="chartHovered1($event)" (chartClick)="chartClicked1($event)">
+                    </canvas>
+                </div>
 
-<hr>
-<h5>ID: 3</h5>
-<h4>Predicted Results</h4>
-<h4>Output: HDFSFile</h4>
-<h5>location : hdfs://mo-ca7106ea2.mo.sap.corp:8020/tmp/sap/reboot/pca_chain_result</h5>
-
-<h5>Time(ms):24612 </h5>
+            </div>
 
 
-        
-        
-        
+        </div>
+        <div class="carousel-item">
+            <div class="d-block w-100" style="display: block">
+
+                <div style="display: block">
+                    <h5>Id : 2</h5>
+                    <h4>Predicted Data</h4>
+                    <h4> /tmp/sap/reboot//example_exec/application_1524240965008_0692/2</h4>
+                    <canvas mdbChart [chartType]="chartType2" [datasets]="chartDatasets2" [labels]="chartLabels2" [colors]="chartColors2" [options]="chartOptions2"
+                        [legend]="true" (chartHover)="chartHovered2($event)" (chartClick)="chartClicked2($event)">
+                    </canvas>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+    <hr>
+
+
+    <div style="display: block" style="margin-bottom:3%;">
+        <h5>ID: 3</h5>
+        <h4>Predicted Results</h4>
+        <h4>Output: HDFSFile</h4>
+        <h5>location : hdfs://mo-ca7106ea2.mo.sap.corp:8020/tmp/sap/reboot/pca_chain_result</h5>
+
+        <h5>Time(ms):24612 </h5>
+    </div>
