@@ -1,13 +1,13 @@
 
 <h1 align="center">chainID: example_exec</h1>
-<div style="display: block" style="margin-bottom:3%;">
+<!-- <div style="display: block" style="margin-bottom:3%;">
 
     <h5>ID: src</h5>
     <h4>Training</h4>
     <h5> dataframeRowCount: 48842</h5>
     <hr>
 
-</div>
+</div> -->
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -18,7 +18,7 @@
     <div class="carousel-inner">
         <div class="carousel-item active ">
             <div class="d-block w-100" style="display: block">
-                <h5>Results</h5>
+                <h5>Data Preview</h5>
 
                 <table class="table table-hover">
                     <thead>
@@ -244,7 +244,7 @@
         <div class="carousel-item">
             <div class="d-block w-100" style="display: block">
                 <h5>ID: 0</h5>
-                <h4>SlicedData</h4>
+                <h4>Gain Chart</h4>
                 <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions"
                     [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
                 </canvas>
@@ -287,6 +287,8 @@
                 <div class="d-block w-100" style="display: block">
     
                     <div style="display: block">
+                           
+                            <h4>Variable Contributions</h4>
 
                             <table class="table table-hover">
                                     <thead>
@@ -338,14 +340,14 @@
 
 
 
-    <hr>
+    
 
 
-    <div style="display: block" style="margin-bottom:3%;">
+    <!-- <div style="display: block" style="margin-bottom:3%;">
         <h5>ID: 3</h5>
         <h4>Predicted Results</h4>
         <h4>Output: HDFSFile</h4>
         <h5>location : hdfs://mo-ca7106ea2.mo.sap.corp:8020/tmp/sap/reboot/pca_chain_result</h5>
 
         <h5>Time(ms):24612 </h5>
-    </div>
+    </div> -->
