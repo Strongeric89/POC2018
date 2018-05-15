@@ -151,6 +151,7 @@ export class ChartComponent implements OnInit {
                             1,
                             1,
                             1
+                    
                             
                             ], label: 'test'},
 
@@ -160,23 +161,59 @@ export class ChartComponent implements OnInit {
   public chartLabels:Array<any> = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'];
   public chartColors:Array<any> = [
       {
-          backgroundColor: 'rgba(220,220,220,0.2)',
-          borderColor: 'rgba(220,220,220,1)',
+          backgroundColor:'transparent',
+          borderColor: 'blue',
           borderWidth: 2,
-          pointBackgroundColor: 'rgba(220,220,220,1)',
+          pointBackgroundColor: 'blue',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(220,220,220,1)'
       },
       {
-          backgroundColor: 'rgba(151,187,205,0.2)',
-          borderColor: 'rgba(151,187,205,1)',
+        backgroundColor:'transparent',
+          borderColor: 'orange',
           borderWidth: 2,
           pointBackgroundColor: 'rgba(151,187,205,1)',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(151,187,205,1)'
-      }
+      },
+      {
+        backgroundColor:'transparent',
+        borderColor: 'brown',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(151,187,205,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(151,187,205,1)'
+    },
+    {
+        backgroundColor:'transparent',
+        borderColor: 'red',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(151,187,205,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(151,187,205,1)'
+    },
+    {
+        backgroundColor:'transparent',
+        borderColor: 'green',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(151,187,205,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(151,187,205,1)'
+    },
+    {
+        backgroundColor:'transparent',
+        borderColor: 'pink',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(151,187,205,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(151,187,205,1)'
+    }
   ];
 
   public chartOptions:any = { 
