@@ -33,7 +33,7 @@ export class ChartComponent implements OnInit {
         0.85,
         0.9,
         0.95,
-        1
+        1,1.2
         ], label: 'frequency'},
         {data: [0,
             0.151718782,
@@ -55,7 +55,7 @@ export class ChartComponent implements OnInit {
             1,
             1,
             1,
-            1
+            1,1.2
             
             ], label: 'wizard'},
             {data: [0,
@@ -78,7 +78,7 @@ export class ChartComponent implements OnInit {
                 1,
                 1,
                 1,
-                1
+                1,1.2
                 
                 
                 ], label: 'validation'},
@@ -102,7 +102,7 @@ export class ChartComponent implements OnInit {
                     0.85,
                     0.9,
                     0.95,
-                    1
+                    1,1.2
                     
                     
                     ], label: 'random'},
@@ -126,7 +126,8 @@ export class ChartComponent implements OnInit {
                         1,
                         1,
                         1,
-                        1
+                        1,
+                        1.2
                         
                         
                         ], label: 'estimation'},
@@ -150,7 +151,8 @@ export class ChartComponent implements OnInit {
                             1,
                             1,
                             1,
-                            1
+                            1,
+                            1.2
                     
                             
                             ], label: 'test'},
@@ -163,7 +165,7 @@ export class ChartComponent implements OnInit {
       {
           backgroundColor:'transparent',
           borderColor: 'blue',
-          borderWidth: 2,
+          borderWidth: 3,
           pointBackgroundColor: 'blue',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
@@ -172,8 +174,8 @@ export class ChartComponent implements OnInit {
       {
         backgroundColor:'transparent',
           borderColor: 'orange',
-          borderWidth: 2,
-          pointBackgroundColor: 'rgba(151,187,205,1)',
+          borderWidth: 3,
+          pointBackgroundColor: 'orange',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(151,187,205,1)'
@@ -181,8 +183,8 @@ export class ChartComponent implements OnInit {
       {
         backgroundColor:'transparent',
         borderColor: 'brown',
-        borderWidth: 2,
-        pointBackgroundColor: 'rgba(151,187,205,1)',
+        borderWidth: 3,
+        pointBackgroundColor: 'brown',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(151,187,205,1)'
@@ -190,8 +192,8 @@ export class ChartComponent implements OnInit {
     {
         backgroundColor:'transparent',
         borderColor: 'red',
-        borderWidth: 2,
-        pointBackgroundColor: 'rgba(151,187,205,1)',
+        borderWidth: 3,
+        pointBackgroundColor: 'red',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(151,187,205,1)'
@@ -199,17 +201,17 @@ export class ChartComponent implements OnInit {
     {
         backgroundColor:'transparent',
         borderColor: 'green',
-        borderWidth: 2,
-        pointBackgroundColor: 'rgba(151,187,205,1)',
+        borderWidth: 3,
+        pointBackgroundColor: 'green',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(151,187,205,1)'
     },
     {
         backgroundColor:'transparent',
-        borderColor: 'pink',
-        borderWidth: 2,
-        pointBackgroundColor: 'rgba(151,187,205,1)',
+        borderColor: 'purple',
+        borderWidth: 3,
+        pointBackgroundColor: 'purple',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(151,187,205,1)'
@@ -265,9 +267,9 @@ export class ChartComponent implements OnInit {
   //node 2
       public chartType2:string = 'bar';      
       public chartDatasets2:Array<any> = [
-        {data: [0.42771606912602533, 0.18294103578861887, 0.45888073465505386,0.3654058605060049], label: 'Part-val:1'},
-        {data: [0.4228153703345113, 0.1787728373911099, 0.28232636903502417,0.36123766210857067], label: 'Part-val:2'},
-        {data: [0.42201004583447577, 0.17809247878521633, 0.3975264573037318,0.36055730350267673], label: 'Part-val:3'},
+        {data: [0.42771606912602533, 0.18294103578861887, 0.45888073465505386,0.3654058605060049], label: 'Partition:1'},
+        {data: [0.4228153703345113, 0.1787728373911099, 0.28232636903502417,0.36123766210857067], label: 'Partition:2'},
+        {data: [0.42201004583447577, 0.17809247878521633, 0.3975264573037318,0.36055730350267673], label: 'Partition:3'},
       
       ];
  
@@ -275,7 +277,7 @@ export class ChartComponent implements OnInit {
       public chartColors2:Array<any> = [
        
           {
-              backgroundColor: 'rgba(151,187,205,0.2)',
+              backgroundColor: 'green',
               borderColor: 'rgba(151,187,205,1)',
               borderWidth: 2,
               pointBackgroundColor: 'rgba(151,187,205,1)',
@@ -284,7 +286,7 @@ export class ChartComponent implements OnInit {
               pointHoverBorderColor: 'rgba(151,187,205,1)'
           },
           {
-            backgroundColor: 'rgba(220,220,220,0.2)',
+            backgroundColor: 'orange',
             borderColor: 'rgba(220,220,220,1)',
             borderWidth: 2,
             pointBackgroundColor: 'rgba(220,220,220,1)',
@@ -293,7 +295,7 @@ export class ChartComponent implements OnInit {
             pointHoverBorderColor: 'rgba(220,220,220,1)'
         },
         {
-            backgroundColor: 'rgba(120,120,120,0.2)',
+            backgroundColor: 'blue',
             borderColor: 'rgba(220,220,220,1)',
             borderWidth: 2,
             pointBackgroundColor: 'rgba(220,220,220,1)',
