@@ -1,13 +1,15 @@
 
+   <ul *ngFor='let x of nodes'>
+       <li>{{x}}</li>
+   
+   </ul>
+   <br>
+
+
+
 <h1 align="center">chainID: example_exec</h1>
-<!-- <div style="display: block" style="margin-bottom:3%;">
 
-    <h5>ID: src</h5>
-    <h4>Training</h4>
-    <h5> dataframeRowCount: 48842</h5>
-    <hr>
 
-</div> -->
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -88,7 +90,7 @@
                             <td>0.758593912</td>
                             <td>0.603179186</td>
                             <td>0.25</td>
-                            <td>00.609477172/td>
+                            <td>00.609477172</td>
                                 <td>0.619253657</td>
 
                         </tr>
@@ -326,6 +328,60 @@
     
     
             </div>
+
+            <div class="carousel-item">
+                <div class="d-block w-100" style="display: block">
+    
+                    <div style="display: block">
+                           
+                            <h4>Confussion Matrix</h4>
+
+                            <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Label</th>
+                                            <th scope="col">Prediction</th>
+                                            <th scope="col">Count</th>
+                                          
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1.0</th>
+                                           <th>1.0</th>
+                                           <th>2943.0</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1.0</th>
+                                           <th>0.0</th>
+                                           <th>8744.0</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">0.0</th>
+                                           <th>1.0</th>
+                                           <th>1710.0</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">0.0</th>
+                                           <th>0.0</th>
+                                           <th>35445.0</th>
+                                        </tr>
+                                     
+                                        </tbody>
+                                        </table>
+
+
+                           
+                    </div>
+    
+    
+                </div>
+    
+    
+            </div>
+
+
+         
 
 
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {DataService} from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,14 @@ export class AppComponent {
 
   valid = true; // change to false
 
+    constructor(){
+    
+
+    }
+
+    ngOnInit(){
+
+    }
   
 
 }
