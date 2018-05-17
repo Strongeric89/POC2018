@@ -1,0 +1,120 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="d-block w-100" style="display: block">
+                <h5>Lift chart</h5>
+                <canvas mdbChart [chartType]="chartType_lift" [datasets]="chartDatasets_lift" [labels]="chartLabels_lift" [colors]="chartColors_lift" [options]="chartOptions"
+                    [legend]="true" (chartHover)="chartHovered_lift($event)" (chartClick)="chartClicked_lift($event)">
+                </canvas>
+            </div>
+        </div>
+        <div class="carousel-item">
+
+            <div class="d-block w-100" style="display: block">
+                <h5>Gain chart</h5>
+                <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions"
+                    [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                </canvas>
+            </div>
+
+        </div>
+        <div class="carousel-item">
+            <div class="d-block w-100" style="display: block">
+
+                <div style="display: block">
+
+                    <h5>Confussion Matrix</h5>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Label</th>
+                                <th scope="col">Prediction</th>
+                                <th scope="col">Count</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1.0</th>
+                                <th>1.0</th>
+                                <th>2943.0</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">1.0</th>
+                                <th>0.0</th>
+                                <th>8744.0</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">0.0</th>
+                                <th>1.0</th>
+                                <th>1710.0</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">0.0</th>
+                                <th>0.0</th>
+                                <th>35445.0</th>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="d-block w-100" style="display: block">
+
+                <div style="display: block">
+                    <h5>KPI</h5>
+
+                    <canvas mdbChart [chartType]="chartType2" [datasets]="chartDatasets2" [labels]="chartLabels2" [colors]="chartColors2" [options]="chartOptions2"
+                        [legend]="true" (chartHover)="chartHovered2($event)" (chartClick)="chartClicked2($event)">
+                    </canvas>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="carousel-item">
+                <div class="d-block w-100" style="display: block">
+            <h5>Response.json</h5>
+            <ul *ngFor='let x of nodes'>
+                <li>{{x}}</li>
+
+            </ul>
+            <br>
+
+  
+
+            <div>
+
+                    
+
+
+            </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

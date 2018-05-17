@@ -10,6 +10,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { FormsModule }   from '@angular/forms';
 import { ChartComponent } from './chart/chart.component';
 import {DataService} from './services/data.service';
+import { MlchartsComponent } from './mlcharts/mlcharts.component';
 
 
 
@@ -18,7 +19,8 @@ import {DataService} from './services/data.service';
     AppComponent,
     FooterComponent,
     NavComponent,
-    ChartComponent
+    ChartComponent,
+    MlchartsComponent
   ],
   imports: [
     BrowserModule,
