@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../services/data.service';
 
+
+
+
+
 @Component({
   selector: 'app-mlcharts',
   templateUrl: './mlcharts.component.html',
@@ -209,23 +213,226 @@ export class MlchartsComponent implements OnInit {
 
     }
 
+
   
 
-    constructor(private dataservice: DataService) { }
+    constructor(private dataservice: DataService ) {
+     
+     }
+
+
+        //display json
+      
     
     json: string[];
+    j: string;
  
     public nodes: Array<any> = [];
+
+   
+
    
     ngOnInit() {
-     
-        this.dataservice.getAll().subscribe(data=>{
+
+      //temp work around without a json-server
+      var data = {
+        "chainID": "example_exec",
+        "nodes": [{
+            "id": "src",
+            "results": {
+              "training": {
+                "dataframeRowCount": 48842,
+                "resultType": "dataset"
+              }
+            },
+            "status": "ok"
+          },
+          {
+            "id": "0",
+            "results": {
+              "0": {
+                "modelMeasures": [{
+                    "name": "PartitionTrain(1)Count",
+                    "value": 38927,
+                    "description": "",
+                    "partitionValue": null
+                  },
+                  {
+                    "name": "PartitionTest(3)Count",
+                    "value": 4894,
+                    "description": "",
+                    "partitionValue": null
+                  },
+                  {
+                    "name": "PartitionValidation(2)Count",
+                    "value": 5021,
+                    "description": "",
+                    "partitionValue": null
+                  }
+                ],
+                "value": null,
+                "resultType": "model"
+              },
+              "slicedData": {
+                "dataframeRowCount": 48842,
+                "resultType": "dataset"
+              }
+            },
+            "status": "ok"
+          },
+          {
+            "id": "1",
+            "results": {
+              "1": {
+                "modelMeasures": [{
+                    "name": "Explained Variance",
+                    "value": 0.9999999688693003,
+                    "description": "Explained Variance",
+                    "partitionValue": null
+                  },
+                  {
+                    "name": "Explained Variance",
+                    "value": 1.7106563550809834e-8,
+                    "description": "Explained Variance",
+                    "partitionValue": null
+                  },
+                  {
+                    "name": "Explained Variance",
+                    "value": 1.3430494648041178e-8,
+                    "description": "Explained Variance",
+                    "partitionValue": null
+                  }
+                ],
+                "value": "/tmp/sap/reboot//example_exec/application_1524240965008_0692/1",
+                "resultType": "model"
+              },
+              "princomps": {
+                "dataframeRowCount": 48842,
+                "resultType": "dataset"
+              }
+            },
+            "status": "ok"
+          },
+          {
+            "id": "2",
+            "results": {
+              "2": {
+                "modelMeasures": [{
+                    "name": "rmse",
+                    "value": 0.42771606912602533,
+                    "description": "",
+                    "partitionValue": 1
+                  },
+                  {
+                    "name": "mse",
+                    "value": 0.18294103578861887,
+                    "description": "",
+                    "partitionValue": 1
+                  },
+                  {
+                    "name": "r2",
+                    "value": -0.0000045888073465505386,
+                    "description": "",
+                    "partitionValue": 1
+                  },
+                  {
+                    "name": "mae",
+                    "value": 0.3654058605060049,
+                    "description": "",
+                    "partitionValue": 1
+                  },
+                  {
+                    "name": "rmse",
+                    "value": 0.4228153703345113,
+                    "description": "",
+                    "partitionValue": 2
+                  },
+                  {
+                    "name": "mse",
+                    "value": 0.1787728373911099,
+                    "description": "",
+                    "partitionValue": 2
+                  },
+                  {
+                    "name": "r2",
+                    "value": -0.00028232636903502417,
+                    "description": "",
+                    "partitionValue": 2
+                  },
+                  {
+                    "name": "mae",
+                    "value": 0.36123766210857067,
+                    "description": "",
+                    "partitionValue": 2
+                  },
+                  {
+                    "name": "rmse",
+                    "value": 0.42201004583447577,
+                    "description": "",
+                    "partitionValue": 3
+                  },
+                  {
+                    "name": "mse",
+                    "value": 0.17809247878521633,
+                    "description": "",
+                    "partitionValue": 3
+                  },
+                  {
+                    "name": "r2",
+                    "value": -0.0003975264573037318,
+                    "description": "",
+                    "partitionValue": 3
+                  },
+                  {
+                    "name": "mae",
+                    "value": 0.36055730350267673,
+                    "description": "",
+                    "partitionValue": 3
+                  }
+                ],
+                "value": "/tmp/sap/reboot//example_exec/application_1524240965008_0692/2",
+                "resultType": "model"
+              },
+              "predictedData": {
+                "dataframeRowCount": 48842,
+                "resultType": "dataset"
+              }
+            },
+            "status": "ok"
+          },
+          {
+            "id": "3",
+            "results": {
+              "predictedResults": {
+                "outputType": "hdfsFile",
+                "value": "hdfs://mo-ca7106ea2.mo.sap.corp:8020/tmp/sap/reboot/pca_chain_result",
+                "dataframeRowCount": 48842,
+                "resultType": "dataset"
+              }
+            },
+            "status": "ok"
+          }
+        ],
+        "timeInMillSeconds": 24612
+      };
+
+       this.j =  JSON.stringify(data,null,4)
+
+      document.getElementById('jsonarea').innerHTML = this.j;
     
-            Array.from(data["nodes"]).forEach((item) => {
-                console.log("ID:" + item["id"]);
-                this.nodes.push(JSON.stringify(item));
-            });//end for each
-        })
+  
+
+
+
+      //using a json-server   
+        // this.dataservice.getAll().subscribe(data=>{
+    
+        //     Array.from(data["nodes"]).forEach((item) => {
+        //         console.log("ID:" + item["id"]);
+        //         this.nodes.push(JSON.stringify(item));
+        //     });//end for each
+        // })
+
   
     }//end ngOnInit
 
