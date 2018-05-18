@@ -15,6 +15,8 @@ export class DataService{
 
 
    public data: Observable<string>
+//    private hdfs: string = "http://mo-ca7106ea2.mo.sap.corp:50070" + "/tmp/sap/eric" + "/sparkjobpco_pipeline.json";
+//    private jsonServer: string = "https://github.com/typicode/demo/blob/master/db.json";
 
     private url:string = "http://localhost:3000/widget";
     getData(){

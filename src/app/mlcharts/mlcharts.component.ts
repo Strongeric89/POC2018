@@ -50,27 +50,27 @@ export class MlchartsComponent implements OnInit {
         {
             backgroundColor: 'transparent',
             borderColor: 'red',
-            borderWidth: 3,
+            borderWidth: 6,
             pointBackgroundColor: 'red',
-            pointBorderColor: '#fff',
+            pointBorderColor: 'red',
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderColor: 'rgba(220,220,220,1)'
         },
         {
             backgroundColor: 'transparent',
             borderColor: 'green',
-            borderWidth: 3,
+            borderWidth: 6,
             pointBackgroundColor: 'green',
-            pointBorderColor: '#fff',
+            pointBorderColor: 'green',
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderColor: 'rgba(151,187,205,1)'
         },
         {
             backgroundColor: 'transparent',
             borderColor: 'purple',
-            borderWidth: 3,
+            borderWidth: 6,
             pointBackgroundColor: 'purple',
-            pointBorderColor: '#fff',
+            pointBorderColor: 'purple',
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderColor: 'rgba(151,187,205,1)'
         }
@@ -112,34 +112,34 @@ export class MlchartsComponent implements OnInit {
         {
             backgroundColor: 'transparent',
             borderColor: 'blue',
-            borderWidth: 3,
+            borderWidth: 6,
             pointBackgroundColor: 'blue',
-            pointBorderColor: '#fff',
+            pointBorderColor: 'blue',
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderColor: 'rgba(220,220,220,1)'
         },
         {
             backgroundColor: 'transparent',
             borderColor: 'orange',
-            borderWidth: 3,
+            borderWidth: 6,
             pointBackgroundColor: 'orange',
-            pointBorderColor: '#fff',
+            pointBorderColor: 'orange',
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderColor: 'rgba(151,187,205,1)'
         },
         {
             backgroundColor: 'transparent',
-            borderColor: 'brown',
-            borderWidth: 3,
-            pointBackgroundColor: 'brown',
-            pointBorderColor: '#fff',
+            borderColor: 'green',
+            borderWidth: 6,
+            pointBackgroundColor: 'green',
+            pointBorderColor: 'green',
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderColor: 'rgba(151,187,205,1)'
         },
         {
             backgroundColor: 'transparent',
             borderColor: 'red',
-            borderWidth: 3,
+            borderWidth: 6,
             pointBackgroundColor: 'red',
             pointBorderColor: '#fff',
             pointHoverBackgroundColor: '#fff',
@@ -185,6 +185,8 @@ export class MlchartsComponent implements OnInit {
 
         //using a json-server   
         this.dataservice.getAll().subscribe(data => {
+
+            console.log(data);
 
             //getting data from json server for lift
           
