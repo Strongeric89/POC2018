@@ -12,12 +12,15 @@
                 <br>
                 <div width="100%;">
                     <span style="width:10%;float:left; padding-top:25%;">
-                        <b>Lift</b>
+                        <b class="badge blue">
+                            <i class="fa fa-line-chart "></i>
+                            Lift</b>
                     </span>
                     <span style="width:90%;float:right;">
                         <div *ngIf="liftFlag">
                             <h5 align="center">
                                 <span class="badge red">Performance
+                                  
                                     <i class="fa fa-arrow-circle-up"></i>
                                 </span>
                             </h5>
@@ -43,7 +46,9 @@
                 <br>
                 <div width="100%;">
                     <span style="width:10%;float:left; padding-top:25%;">
-                        <b>Gain</b>
+                        <b class="badge blue">
+                                <i class="fa fa-line-chart "></i>
+                            Gain</b>
                     </span>
                     <span style="width:90%;float:right;">
                         <div *ngIf="liftFlag">
@@ -88,14 +93,14 @@
                         <tbody>
                             <tr>
                                 <th scope="row">{{cmData1[0]}}</th>
-                                <th>{{cmData2[0]}}</th>
-                                <th>{{cmData3[0]}}</th>
-
+                                <th> <progress max="48842.00" value= "{{cmData2[0]}}"> </progress> {{cmData2[0]}}</th>
+                                <th> <progress max="48842.00" value= "{{cmData3[0]}}"> </progress> {{cmData3[0]}}</th>
+                                
                             </tr>
                             <tr>
                                 <th scope="row">{{cmData1[1]}} </th>
-                                <th>{{cmData2[1]}}</th>
-                                <th>{{cmData3[1]}}</th>
+                                <th>  <progress max="48842.00" value= "{{cmData2[1]}}"> </progress>{{cmData2[1]}}</th>
+                                <th> <progress max="48842.00" value= "{{cmData3[1]}}"> </progress>{{cmData3[1]}}</th>
 
                             </tr>
 
@@ -116,7 +121,7 @@
                 <h5>Data Preview</h5>
 
                 <table class="table table-hover">
-                    <thead>
+                    <thead class="thead-light" >
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Frequency</th>

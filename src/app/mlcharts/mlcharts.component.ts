@@ -187,8 +187,12 @@ export class MlchartsComponent implements OnInit {
         this.dataservice.getAll().subscribe(data => {
 
             //getting data from json server for lift
+          
             this.liftLabels = data["lift"]["cols"];
             this.liftData_index = data["lift"]["data"][0];
+            
+            this.liftData_index = this.addPercent(this.liftData_index);
+         
             this.liftData_model = data["lift"]["data"][1];
             this.liftData_wizard = data["lift"]["data"][2];
             this.liftData_random = data["lift"]["data"][3];
@@ -210,6 +214,8 @@ export class MlchartsComponent implements OnInit {
             //getting data from json server for gain
             this.gainLabels = data["gain"]["cols"];
             this.gainData_index = data["gain"]["data"][0];
+            this.gainData_index = this.addPercent(this.gainData_index);
+         
             this.gainData_model = data["gain"]["data"][1];
             this.gainData_wizard = data["gain"]["data"][2];
             this.gainData_random = data["gain"]["data"][3];
@@ -239,10 +245,10 @@ export class MlchartsComponent implements OnInit {
             this.cmData3 = data["cm"]["data"][2];
 
             if (this.cmLabels.length > 0) {
-              
+
                 console.log('recieved cm data')
 
-             
+
             }
         }); //end foreach
 
@@ -250,5 +256,14 @@ export class MlchartsComponent implements OnInit {
 
 
     }//end ngOnInit
+
+    public addPercent(labels){
+        var newLabels = [];
+        labels.forEach((item) =>{
+            newLabels.push(item + '%');
+        });
+        return newLabels;
+
+    }
 
 }
