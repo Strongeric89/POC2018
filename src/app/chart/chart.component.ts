@@ -341,11 +341,12 @@ export class ChartComponent implements OnInit {
     ngOnInit() {
      
         this.dataservice.getAll().subscribe(data=>{
-    
-            Array.from(data["nodes"]).forEach((item) => {
-                console.log("ID:" + item["id"]);
-                this.nodes.push(JSON.stringify(item));
-            });//end for each
+                    console.log(data)
+
+            // Array.from(data["lift"]).forEach((item) => {
+            //     console.log("ID:" + item["cols"]);
+            //     this.nodes.push(JSON.stringify(item));
+            // });//end for each
         })
   
     }//end ngOnInit
