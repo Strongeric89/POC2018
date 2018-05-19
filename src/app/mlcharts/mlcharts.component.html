@@ -8,7 +8,7 @@
 
         <div class="carousel-item active">
             <div class="d-block w-100" style="display: block">
-                <h5><b>Lift chart</b></h5>
+                <h1><b>Lift chart</b></h1>
                 <br>
                 <div width="100%;">
                     <span style="width:10%;float:left; padding-top:25%;font-size:22pt;">
@@ -45,7 +45,7 @@
 
         <div class="carousel-item">
             <div class="d-block w-100" style="display: block">
-                <h5><b>Gain chart</b></h5>
+                <h1><b>Gain chart</b></h1>
                 <br>
                 <div width="100%;">
                     <span style="width:10%;float:left; padding-top:25%;font-size:22pt;">
@@ -82,30 +82,30 @@
 
                 <div style="display: block">
 
-                    <h5><b>Confusion Matrix</b></h5>
+                    <h1><b>Confusion Matrix</b></h1>
                     <br>
 
-                    <table class="table table-hover" >
+                    <table class="table table-hover">
                         <thead>
                             <tr class="thead-light">
-                                <th scope="col">{{cmLabels[0]}}</th>
-                                <th scope="col">{{cmLabels[1]}}</th>
-                                <th scope="col">{{cmLabels[2]}}</th>
+                                <th id="cm" scope="col">{{cmLabels[0]}}</th>
+                                <th id="cm" scope="col">{{cmLabels[1]}}</th>
+                                <th id="cm" scope="col">{{cmLabels[2]}}</th>
                             </tr>
 
                         </thead>
 
                         <tbody>
                             <tr>
-                                <th scope="row">{{cmData1[0]}}</th>
-                                <th> <progress max="48842.00" value= "{{cmData2[0]}}"> </progress> {{cmData2[0]}}</th>
-                                <th> <progress max="48842.00" value= "{{cmData3[0]}}"> </progress> {{cmData3[0]}}</th>
+                                <th id="cm" scope="row">{{cmData1[0]}}</th>
+                                <th id="cm"> <progress max="{{cmTotal}}" value= "{{cmData2[0]}}"> </progress> {{cmData2[0]}}</th>
+                                <th id="cm"> <progress max="{{cmTotal}}" value= "{{cmData3[0]}}"> </progress> {{cmData3[0]}}</th>
                                 
                             </tr>
                             <tr>
-                                <th scope="row">{{cmData1[1]}} </th>
-                                <th>  <progress max="48842.00" value= "{{cmData2[1]}}"> </progress>{{cmData2[1]}}</th>
-                                <th> <progress max="48842.00" value= "{{cmData3[1]}}"> </progress>{{cmData3[1]}}</th>
+                                <th id="cm" scope="row">{{cmData1[1]}} </th>
+                                <th id="cm">  <progress max="{{cmTotal}}" value= "{{cmData2[1]}}"> </progress>{{cmData2[1]}}</th>
+                                <th id="cm"> <progress max="{{cmTotal}}" value= "{{cmData3[1]}}"> </progress>{{cmData3[1]}}</th>
 
                             </tr>
 
@@ -123,19 +123,19 @@
 
         <div class="carousel-item">
             <div class="d-block w-100" style="display: block">
-                <h5><b>Data Preview</b></h5>
+                <h1><b>Data Preview</b></h1>
                 <br>
 
                 <table class="table table-hover">
-                    <thead class="thead-light" >
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Frequency</th>
-                            <th scope="col">Wizard</th>
-                            <th scope="col">Validation</th>
-                            <th scope="col">Random</th>
-                            <th scope="col">Estimation</th>
-                            <th scope="col">Test</th>
+                    <thead class="thead-light"  >
+                        <tr >
+                            <th class="tableStyle" scope="col">#</th>
+                            <th class="tableStyle"scope="col">Frequency</th>
+                            <th class="tableStyle" scope="col">Wizard</th>
+                            <th class="tableStyle" scope="col">Validation</th>
+                            <th class="tableStyle" scope="col">Random</th>
+                            <th class="tableStyle" scope="col">Estimation</th>
+                            <th class="tableStyle" scope="col">Test</th>
                         </tr>
                     </thead>
                     <tbody>

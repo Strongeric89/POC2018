@@ -28,6 +28,7 @@ export class MlchartsComponent implements OnInit {
     public cmData1 = [];
     public cmData2 = [];
     public cmData3 = [];
+    public cmTotal = 0;
 
 
     //Lift Chart
@@ -230,6 +231,10 @@ export class MlchartsComponent implements OnInit {
             this.cmData2 = data["cm"]["data"][1];
             this.cmData3 = data["cm"]["data"][2];
 
+            this.cmTotal += parseInt(this.cmData2[0]) + parseInt(this.cmData2[1]) + parseInt(this.cmData3[0]) + parseInt(this.cmData3[1])
+            
+            
+
             if (this.cmLabels.length > 0) {
 
                 console.log('recieved cm data')
@@ -242,6 +247,13 @@ export class MlchartsComponent implements OnInit {
 
 
     }//end ngOnInit
+
+    // public calCMTotal(cmVar){
+    //     this.cmTotal += parseInt(cmVar);
+
+    // }
+
+    
 
     public addPercent(labels){
         var newLabels = [];
