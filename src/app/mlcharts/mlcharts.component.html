@@ -7,7 +7,7 @@
     <div class="carousel-inner">
 
         <div class="carousel-item active">
-            <div class="d-block w-100" style="display: block">
+            <div class="d-block w-100" style="display: block;">
                 <h1><b>Lift chart</b></h1>
                 <br>
                 <div width="100%;">
@@ -128,216 +128,22 @@
 
                 <table class="table table-hover">
                     <thead class="thead-light"  >
-                        <tr >
-                            <th class="tableStyle" scope="col">#</th>
-                            <th class="tableStyle"scope="col">Frequency</th>
-                            <th class="tableStyle" scope="col">Wizard</th>
+                        <tr *ngFor="let l of sampleDataLabels">
+                              <th class="tableStyle"scope="col">{{l}}</th>
+                            <!-- <th class="tableStyle" scope="col">Wizard</th>
                             <th class="tableStyle" scope="col">Validation</th>
                             <th class="tableStyle" scope="col">Random</th>
                             <th class="tableStyle" scope="col">Estimation</th>
                             <th class="tableStyle" scope="col">Test</th>
-                        </tr>
+                        </tr> -->
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                        <tr *ngFor="let r of samepleData_1">
+                           
+                            <td>{{r}}</td>
+                         
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>0.05</td>
-                            <td>0.151718782</td>
-                            <td> 0.1446392155</td>
-                            <td>0.05</td>
-                            <td> 0.147295567 </td>
-                            <td>0.148159164</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>0.1</td>
-                            <td> 0.303437565</td>
-                            <td> 0.282985077</td>
-                            <td>0.1</td>
-                            <td> 0.285890507</td>
-                            <td>0.288644435</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>0.15</td>
-                            <td> 0.455156347</td>
-                            <td> 0.409539743</td>
-                            <td>0.15</td>
-                            <td> 0.409761872 </td>
-                            <td> 0.417765276</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>0.2</td>
-                            <td>0.606875129</td>
-                            <td>0.514706948</td>
-                            <td>0.2</td>
-                            <td>0.517770163</td>
-                            <td>0.523563815</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>0.25</td>
-                            <td>0.758593912</td>
-                            <td>0.603179186</td>
-                            <td>0.25</td>
-                            <td>00.609477172</td>
-                            <td>0.619253657</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">7</th>
-                            <td>0.3</td>
-                            <td> 0.910312694</td>
-                            <td>0.684704554</td>
-                            <td>0.3</td>
-                            <td>0.693718276</td>
-                            <td>0.702505277</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td>0.35</td>
-                            <td>1</td>
-                            <td> 0.760199689</td>
-                            <td>0.35</td>
-                            <td>0.775830427</td>
-                            <td>0.769322629</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">10</th>
-                            <td>0.4</td>
-                            <td>1</td>
-                            <td> 0.841653728</td>
-                            <td>0.4</td>
-                            <td> 0.853817481</td>
-                            <td>0.848699164</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">11</th>
-                            <td>0.45</td>
-                            <td>1</td>
-                            <td>0.906091398</td>
-                            <td>0.45</td>
-                            <td> 0.916762787</td>
-                            <td>0.914441258</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">12</th>
-                            <td>0.5</td>
-                            <td>1</td>
-                            <td>0.960434499</td>
-                            <td>0.5</td>
-                            <td> 0.966976851</td>
-                            <td>0.965800592</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">13</th>
-                            <td>0.55</td>
-                            <td>1</td>
-                            <td> 0.986015808</td>
-                            <td>0.55</td>
-                            <td> 0.989194712</td>
-                            <td>0.991808524</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">14</th>
-                            <td>0.65</td>
-                            <td>1</td>
-                            <td> 0.999509111</td>
-                            <td>0.65</td>
-                            <td>0.999902785</td>
-                            <td>1</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">15</th>
-                            <td>0.7</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0.7</td>
-                            <td>1</td>
-                            <td>1</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">16</th>
-                            <td>0.75</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0.75</td>
-                            <td>1</td>
-                            <td>1</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">17</th>
-                            <td>0.8</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0.8</td>
-                            <td>1</td>
-                            <td>1</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">18</th>
-                            <td>0.85</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0.85</td>
-                            <td>1</td>
-                            <td>1</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">19</th>
-                            <td>0.9</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0.9</td>
-                            <td>1</td>
-                            <td>1</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">20</th>
-                            <td>0.95</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0.95</td>
-                            <td>1</td>
-                            <td>1</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">21</th>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                        </tr>
-
+         
 
                     </tbody>
                 </table>
@@ -349,12 +155,13 @@
     </div>
 
 
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"  ></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true" ></span>
-        <span class="sr-only">Next</span>
-    </a>
+
 </div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="background-color:#bdd4f9; width:5%;">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="background-color:#bdd4f9; width:5%;">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+</a>

@@ -30,6 +30,10 @@ export class MlchartsComponent implements OnInit {
     public cmData3 = [];
     public cmTotal = 0;
 
+    public sampleDataLabels = [];
+    public samepleData_1 = [];
+
+
 
     //Lift Chart
     public chartType_lift: string = 'line';
@@ -82,6 +86,7 @@ export class MlchartsComponent implements OnInit {
     };
 
     public chartClicked_lift(e: any): void {
+     
 
     }
 
@@ -241,6 +246,22 @@ export class MlchartsComponent implements OnInit {
 
 
             }
+
+        //sample-data_1
+        this.sampleDataLabels = data["sample_data_1"]["cols"];
+        this.samepleData_1 = data["sample_data_1"]["data"][0];
+
+        
+        if (this.sampleDataLabels.length > 0) {
+
+            console.log('recieved table data')
+
+
+        }
+        
+        
+
+
         }); //end foreach
 
         //load the charts with new data
