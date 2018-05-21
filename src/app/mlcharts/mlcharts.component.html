@@ -1,12 +1,13 @@
-<div *ngIf='liftFlag == false' align="center" style="color:red;"><b>Problem Loading Data</b>
+<div *ngIf='chartFlag == false' align="center" style="color:red;"><b>Problem Loading Data</b>
     <br>
     <h4>See JSON Data Source</h4> 
 </div>
 
-<div *ngIf='liftFlag' id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
 
         <div class="carousel-item active">
+
             <div class="d-block w-100" style="display: block;">
                 <h1><b>Lift chart</b></h1>
                 <br>
@@ -17,7 +18,7 @@
                             Lift</b>
                     </span>
                     <span style="width:90%;float:right;">
-                        <div *ngIf="liftFlag">
+                        <div *ngIf="chartFlag == true">
                             <h5 align="center">
                                 <span class="badge red" style="font-size:16pt;">Performance
                                   
@@ -26,8 +27,8 @@
                                 <br>
                             </h5>
 
-                            <canvas mdbChart [chartType]="chartType_lift" [datasets]="chartDatasets_lift" [labels]="chartLabels_lift" [colors]="chartColors_lift"
-                                [options]="chartOptions" [legend]="true" (chartHover)="chartHovered_lift($event)" (chartClick)="chartClicked_lift($event)">
+                            <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors"
+                                [options]="chartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
                             </canvas>
                             <br>
                             <h5 align="center">
@@ -54,15 +55,15 @@
                             Gain</b>
                     </span>
                     <span style="width:90%;float:right;">
-                        <div *ngIf="liftFlag">
+                        <div *ngIf="chartFlag2">
                             <h5 align="center">
                                 <span class="badge red" style="font-size:16pt;">Performance
                                     <i class="fa fa-arrow-circle-up"></i>
                                 </span>
                             </h5>
 
-                            <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions"
-                                [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                            <canvas mdbChart [chartType]="chartType2" [datasets]="chartDatasets2" [labels]="chartLabels2" [colors]="chartColors2" [options]="chartOptions2"
+                                [legend]="true" (chartHover)="chartHovered2($event)" (chartClick)="chartClicked2($event)">
                             </canvas>
                             <br>
                             <h5 align="center">
