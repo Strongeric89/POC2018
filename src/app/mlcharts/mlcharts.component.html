@@ -10,6 +10,7 @@
         <div class="carousel-item active">
 
             <div class="d-block w-100" style="display: block;">
+                    <div *ngIf="chartFlag == true">
                 <h1>
                     <b>Lift chart</b>
                 </h1>
@@ -21,7 +22,7 @@
                             Lift</b>
                     </span>
                     <span style="width:90%;float:right;">
-                        <div *ngIf="chartFlag == true">
+                     
                             <h5 align="center">
                                 <span class="badge red" style="font-size:16pt;">Performance
 
@@ -40,15 +41,19 @@
                                 </span>
 
                             </h5>
-                        </div>
+                       
                     </span>
                 </div>
+
+                </div>
+
             </div>
         </div>
 
 
         <div class="carousel-item">
             <div class="d-block w-100" style="display: block">
+                    <div *ngIf="chartFlag2">
                 <h1>
                     <b>Gain chart</b>
                 </h1>
@@ -60,7 +65,7 @@
                             Gain</b>
                     </span>
                     <span style="width:90%;float:right;">
-                        <div *ngIf="chartFlag2">
+                      
                             <h5 align="center">
                                 <span class="badge red" style="font-size:16pt;">Performance
                                     <i class="fa fa-arrow-circle-up"></i>
@@ -76,8 +81,9 @@
                                     <i class="fa fa-percent"></i>
                                 </span>
                             </h5>
-                        </div>
+                        
                     </span>
+                </div>
                 </div>
             </div>
         </div>

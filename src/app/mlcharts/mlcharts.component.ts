@@ -66,7 +66,7 @@ export class MlchartsComponent implements OnInit {
 
     ngOnInit() {
         //This is where the Debrief.json is loaded from a GET request - see Services/data.service.ts
-        this.dataservice.getAll2().subscribe(data => {
+        this.dataservice.getAll().subscribe(data => {
             var number_of_cols_lift = data['debrief']['Lift']['rows'].length;
             var number_of_cols_gain = data['debrief']['Gain']['rows'].length;
             //var number_of_cols_sample =  data['debrief']['sample']['src']['columes'].length;
@@ -134,7 +134,7 @@ export class MlchartsComponent implements OnInit {
 
         //create object     
         var obj = { data: d, label: data['debrief'][chartName]['columes'][colBase] };
-        console.log(obj)
+        // console.log(obj)
         //add object to chart data 
         if (obj.label == 'Index' || obj.label == null) {
             return;
@@ -151,8 +151,6 @@ export class MlchartsComponent implements OnInit {
             //create the css for each
             this.chartColors2.push(this.createCSSForChart(colBase + this.numofcols )); // + 3 to select different colors
         }
-
-
 
     }
 
