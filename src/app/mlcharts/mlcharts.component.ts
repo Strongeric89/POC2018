@@ -53,18 +53,28 @@ export class MlchartsComponent implements OnInit {
     }
 
 
+    //Confusion Matrix
+    public cmCols = [];
+    public cmRows = [];
+
+    //Sample Data
+    public sampleData_cols = [];
+    public sampleData_rows = [];
+    public numRowsSampleData = 0;
+
     constructor(private dataservice: DataService) { }
 
     ngOnInit() {
+        //This is where the Debrief.json is loaded from a GET request - see Services/data.service.ts
         this.dataservice.getAll2().subscribe(data => {
             var number_of_cols_lift = data['debrief']['Lift']['rows'].length;
             var number_of_cols_gain = data['debrief']['Gain']['rows'].length;
-            var number_of_cols_cm = data['debrief']['Confusion_Matrix']['columes'].length;
+            //var number_of_cols_sample =  data['debrief']['sample']['src']['columes'].length;
+         
+
             this.numofcols =  data['debrief']['Lift']['columes'].length;
            
-            //var number_of_cols_sample =  data['debrief']['sample']['src']['columes'].length;
         
-
             //get first element x from each array
             var colBase = 0;
             for (var x = 0; x < number_of_cols_lift; x++) {
@@ -84,7 +94,17 @@ export class MlchartsComponent implements OnInit {
 
             }
 
+            //Confusion Matrix Logic
+            this.cmCols = data['debrief']['Confusion_Matrix']['columes'];
+            this.cmRows = data['debrief']['Confusion_Matrix']['rows'];
 
+
+            //Sample Data
+            this.sampleData_cols =  data['sample']['src']['columes'];
+            this.sampleData_rows =  data['sample']['src']['rows'];
+            this.numRowsSampleData = this.sampleData_rows.length;
+            
+            
             //console.log(this.chartLabels)
 
             if (this.chartLabels.length > 0) {
@@ -96,7 +116,7 @@ export class MlchartsComponent implements OnInit {
             }
 
 
-        });//end 
+        });//end forEach
 
 
 
@@ -160,16 +180,9 @@ export class MlchartsComponent implements OnInit {
         return cssObj;
 
 
-    }
+    }//endcreateCss
 
 
       
 
-    }//end ngOnInit
-
-
-    
-
- 
-
-// }
+}//end class

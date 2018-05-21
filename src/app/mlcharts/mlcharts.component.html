@@ -1,6 +1,7 @@
-<div *ngIf='chartFlag == false' align="center" style="color:red;"><b>Problem Loading Data</b>
+<div *ngIf='chartFlag == false' align="center" style="color:red;">
+    <b>Problem Loading Data</b>
     <br>
-    <h4>See JSON Data Source</h4> 
+    <h4>See JSON Data Source</h4>
 </div>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -9,7 +10,9 @@
         <div class="carousel-item active">
 
             <div class="d-block w-100" style="display: block;">
-                <h1><b>Lift chart</b></h1>
+                <h1>
+                    <b>Lift chart</b>
+                </h1>
                 <br>
                 <div width="100%;">
                     <span style="width:10%;float:left; padding-top:25%;font-size:22pt;">
@@ -21,21 +24,21 @@
                         <div *ngIf="chartFlag == true">
                             <h5 align="center">
                                 <span class="badge red" style="font-size:16pt;">Performance
-                                  
+
                                     <i class="fa fa-arrow-circle-up"></i>
                                 </span>
                                 <br>
                             </h5>
 
-                            <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors"
-                                [options]="chartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                            <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions"
+                                [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
                             </canvas>
                             <br>
                             <h5 align="center">
                                 <span class="badge green" style="font-size:16pt;">Percentage
                                     <i class="fa fa-percent"></i>
                                 </span>
-                                
+
                             </h5>
                         </div>
                     </span>
@@ -46,12 +49,14 @@
 
         <div class="carousel-item">
             <div class="d-block w-100" style="display: block">
-                <h1><b>Gain chart</b></h1>
+                <h1>
+                    <b>Gain chart</b>
+                </h1>
                 <br>
                 <div width="100%;">
                     <span style="width:10%;float:left; padding-top:25%;font-size:22pt;">
                         <b class="badge blue">
-                                <i class="fa fa-line-chart"></i>
+                            <i class="fa fa-line-chart"></i>
                             Gain</b>
                     </span>
                     <span style="width:90%;float:right;">
@@ -83,39 +88,23 @@
 
                 <div style="display: block">
 
-                    <h1><b>Confusion Matrix</b></h1>
+                    <h1>
+                        <b>Confusion Matrix</b>
+                    </h1>
                     <br>
-
                     <table class="table table-hover">
-                        <thead>
-                            <tr class="thead-light">
-                                <th id="cm" scope="col">{{cmLabels[0]}}</th>
-                                <th id="cm" scope="col">{{cmLabels[1]}}</th>
-                                <th id="cm" scope="col">{{cmLabels[2]}}</th>
-                            </tr>
 
-                        </thead>
+                        <tr class="thead-light">
+                            <td id="cm" *ngFor="let c of cmCols">{{c}}</td>
+                        </tr>
 
                         <tbody>
-                            <tr>
-                                <th id="cm" scope="row">{{cmData1[0]}}</th>
-                                <th id="cm"> <progress max="{{cmTotal}}" value= "{{cmData2[0]}}"> </progress> {{cmData2[0]}}</th>
-                                <th id="cm"> <progress max="{{cmTotal}}" value= "{{cmData3[0]}}"> </progress> {{cmData3[0]}}</th>
-                                
+                            <tr *ngFor="let row of cmRows">
+                                <td *ngFor="let r of row">{{r}} </td>
                             </tr>
-                            <tr>
-                                <th id="cm" scope="row">{{cmData1[1]}} </th>
-                                <th id="cm">  <progress max="{{cmTotal}}" value= "{{cmData2[1]}}"> </progress>{{cmData2[1]}}</th>
-                                <th id="cm"> <progress max="{{cmTotal}}" value= "{{cmData3[1]}}"> </progress>{{cmData3[1]}}</th>
-
-                            </tr>
-
-
+                          
                         </tbody>
                     </table>
-
-
-
                 </div>
 
 
@@ -124,30 +113,24 @@
 
         <div class="carousel-item">
             <div class="d-block w-100" style="display: block">
-                <h1><b>Data Preview</b></h1>
+                <h1>
+                    <b>Data Preview</b>
+                </h1>
                 <br>
-
                 <table class="table table-hover">
-                    <thead class="thead-light"  >
-                        <tr *ngFor="let l of sampleDataLabels">
-                              <th class="tableStyle"scope="col">{{l}}</th>
-                            <!-- <th class="tableStyle" scope="col">Wizard</th>
-                            <th class="tableStyle" scope="col">Validation</th>
-                            <th class="tableStyle" scope="col">Random</th>
-                            <th class="tableStyle" scope="col">Estimation</th>
-                            <th class="tableStyle" scope="col">Test</th>
-                        </tr> -->
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let r of samepleData_1">
-                           
-                            <td>{{r}}</td>
-                         
-                        </tr>
-         
 
-                    </tbody>
-                </table>
+                        <tr class="thead-light">
+                            <td id="cm" *ngFor="let c of sampleData_cols">{{c}}</td>
+                        </tr>
+
+                        <tbody>
+                            <tr *ngFor="let row of sampleData_rows">
+                                <td *ngFor="let r of row" >{{r}} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
 
             </div>
 
