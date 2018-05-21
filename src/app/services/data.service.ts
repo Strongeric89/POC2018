@@ -16,6 +16,8 @@ export class DataService{
 
    public data: Observable<string>
     private liveURL: string = 'https://my-json-server.typicode.com/Strongeric89/json-server/widget';
+  
+   
 
     private url:string = "http://localhost:3000/widget";
     getData(){
@@ -25,6 +27,12 @@ export class DataService{
     getAll(){
         return this.http.get<string[]>(this.liveURL);
     }
+
+    getAll2(){
+        return this.http.get<string[]>(this.url);
+    }
+
+ 
 
 
  
