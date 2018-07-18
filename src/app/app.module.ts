@@ -11,6 +11,7 @@ import { FormsModule }   from '@angular/forms';
 import { ChartComponent } from './chart/chart.component';
 import {DataService} from './services/data.service';
 import { MlchartsComponent } from './mlcharts/mlcharts.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 
@@ -20,7 +21,8 @@ import { MlchartsComponent } from './mlcharts/mlcharts.component';
     FooterComponent,
     NavComponent,
     ChartComponent,
-    MlchartsComponent
+    MlchartsComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

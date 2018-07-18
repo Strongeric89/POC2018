@@ -23,9 +23,9 @@ export class DataService{
     }
 
     getAll(){
-        return this.http.get<string[]>(this.liveURL);
+        return this.http.get<string[]>(this.url);
     }
 
 
- 
+
 }

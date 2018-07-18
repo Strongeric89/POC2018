@@ -1,0 +1,79 @@
+
+
+
+<div class="accordion" id="accordionExample">
+
+  <div  *ngFor="let proj of projects" class="card" >
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button #v style="color:black !important;"class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="'#' + proj.id" id="#{{proj.id}}" aria-expanded="true" aria-controls="collapseOne">
+          {{proj.name}} |  {{proj.id}} |   {{proj.description}}
+        </button>
+      </h5>
+    </div>
+
+    <div id="{{proj.id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div  class="card-body">
+
+
+          <div class="accordion" id="accordionExample2">
+
+              <div  *ngFor="let mod of models" class="card" >
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button #v style="color:black !important;"class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="'#' + mod.id" id="#{{mod.id}}" aria-expanded="true" aria-controls="collapseTwo">
+                      {{mod.name}} |  {{mod.id}} |   {{mod.description}}
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="{{mod.id}}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample2">
+                  <div  class="card-body">
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Verisions</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of models">
+        <th scope="row">{{m.id}}</th>
+        <td>{{m.name}}</td>
+          <td>
+          <tr  *ngFor="let mv of modelVersionKeys">
+              <td>{{mv}}</td>
+
+              <td *ngFor="let run of runData">
+                  <button #e type="button" class="btn btn-primary" value="{{run.run2.graphID}}" (click)="launch(e.value);">{{run.run2.graphID}}</button>
+                  <button type="button" class="btn btn-danger">   {{run.run2.datetime}}</button>
+
+              </td>
+
+          </tr>
+          </td>
+
+
+      </tr>
+
+    </tbody>
+  </table>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
