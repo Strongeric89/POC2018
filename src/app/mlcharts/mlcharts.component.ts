@@ -8,150 +8,16 @@ import { DataService } from '../services/data.service';
 })
 export class MlchartsComponent implements OnInit {
 
-
-    //arrays for data from Json response
-    public liftLabels = [];
-    public liftData_index = [];
-    public liftData_model = [];
-    public liftData_wizard = [];
-    public liftData_random = [];
-    public liftFlag = false;
-
-    public gainLabels = [];
-    public gainData_index = [];
-    public gainData_model = [];
-    public gainData_wizard = [];
-    public gainData_random = [];
-    public gainFlag = false;
-
-    public cmLabels = [];
-    public cmData1 = [];
-    public cmData2 = [];
-    public cmData3 = [];
-    public cmTotal = 0;
-
-    public sampleDataLabels = [];
-    public samepleData_1 = [];
+    public numofcols = 0; // for css to select different colors
 
 
-
-    //Lift Chart
-    public chartType_lift: string = 'line';
-    public chartDatasets_lift: Array<any> = [
-
-        {
-            data: this.liftData_model, label: this.liftLabels[1]
-        },
-        {
-            data: this.liftData_wizard, label: this.liftLabels[2]
-        },
-        {
-            data: this.liftData_random, label: this.liftLabels[3]
-        }
-
-    ];
-    public chartLabels_lift: Array<any> = this.liftData_index;
-    public chartColors_lift: Array<any> = [
-        {
-            backgroundColor: 'transparent',
-            borderColor: 'red',
-            borderWidth: 6,
-            pointBackgroundColor: 'red',
-            pointBorderColor: 'red',
-            pointHoverBackgroundColor: 'red',
-            pointHoverBorderColor: 'red'
-        },
-        {
-            backgroundColor: 'transparent',
-            borderColor: 'green',
-            borderWidth: 6,
-            pointBackgroundColor: 'green',
-            pointBorderColor: 'green',
-            pointHoverBackgroundColor: 'green',
-            pointHoverBorderColor: 'green'
-        },
-        {
-            backgroundColor: 'transparent',
-            borderColor: 'purple',
-            borderWidth: 6,
-            pointBackgroundColor: 'purple',
-            pointBorderColor: 'purple',
-            pointHoverBackgroundColor: 'purple',
-            pointHoverBorderColor: 'purple'
-        }
-    ];
-
-    public chartOptions_lift: any = {
-        responsive: true
-    };
-
-    public chartClicked_lift(e: any): void {
-     
-
-    }
-
-    public chartHovered_lift(e: any): void {
-
-    }
-
-    constructor(private dataservice: DataService) {
-
-    }
-
-    // Gain chart - with dynamic data
+    // Lift chart
+    public chartFlag = false;
     public chartType: string = 'line';
-    public chartDatasets: Array<any> = [
 
-        {
-            data: this.gainData_model, label: this.gainLabels[1]
-        },
-        {
-            data: this.gainData_wizard, label: this.gainLabels[2]
-        },
-        {
-            data: this.gainData_random, label: this.gainLabels[3]
-        }
-
-    ];
-    public chartLabels: Array<any> = this.gainData_index;
-    public chartColors: Array<any> = [
-        {
-            backgroundColor: 'transparent',
-            borderColor: 'blue',
-            borderWidth: 6,
-            pointBackgroundColor: 'blue',
-            pointBorderColor: 'blue',
-            pointHoverBackgroundColor: 'blue',
-            pointHoverBorderColor: 'blue'
-        },
-        {
-            backgroundColor: 'transparent',
-            borderColor: 'orange',
-            borderWidth: 6,
-            pointBackgroundColor: 'orange',
-            pointBorderColor: 'orange',
-            pointHoverBackgroundColor: 'orange',
-            pointHoverBorderColor: 'orange'
-        },
-        {
-            backgroundColor: 'transparent',
-            borderColor: 'green',
-            borderWidth: 6,
-            pointBackgroundColor: 'green',
-            pointBorderColor: 'green',
-            pointHoverBackgroundColor: 'green',
-            pointHoverBorderColor: 'green'
-        },
-        {
-            backgroundColor: 'transparent',
-            borderColor: 'red',
-            borderWidth: 6,
-            pointBackgroundColor: 'red',
-            pointBorderColor: 'red',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'red'
-        }
-    ];
+    public chartDatasets: Array<any> = [];
+    public chartLabels: Array<any> = [];
+    public chartColors: Array<any> = [];
 
     public chartOptions: any = {
         responsive: true
@@ -166,123 +32,155 @@ export class MlchartsComponent implements OnInit {
     }
 
 
+    // Lift chart
+    public chartFlag2 = false;
+    public chartType2: string = 'line';
+
+    public chartDatasets2: Array<any> = [];
+    public chartLabels2: Array<any> = [];
+    public chartColors2: Array<any> = [];
+
+    public chartOptions2: any = {
+        responsive: true
+    };
+
+    public chartClicked2(e: any): void {
+
+    }
+
+    public chartHovered2(e: any): void {
+
+    }
 
 
+    //Confusion Matrix
+    public cmCols = [];
+    public cmRows = [];
+
+    //Sample Data
+    public sampleData_cols = [];
+    public sampleData_rows = [];
+    public numRowsSampleData = 0;
+
+    constructor(private dataservice: DataService) { }
 
     ngOnInit() {
-
-        //using a json-server   
+        //This is where the Debrief.json is loaded from a GET request - see Services/data.service.ts
         this.dataservice.getAll().subscribe(data => {
-
-            console.log(data);
-
-            //getting data from json server for lift
-          
-            this.liftLabels = data["lift"]["cols"];
-            this.liftData_index = data["lift"]["data"][0];
-            
-            this.liftData_index = this.addPercent(this.liftData_index);
+            var number_of_cols_lift = data['debrief']['Lift']['rows'].length;
+            var number_of_cols_gain = data['debrief']['Gain']['rows'].length;
+            //var number_of_cols_sample =  data['debrief']['sample']['src']['columes'].length;
          
-            this.liftData_model = data["lift"]["data"][1];
-            this.liftData_wizard = data["lift"]["data"][2];
-            this.liftData_random = data["lift"]["data"][3];
 
-            //console.log(data["lift"]["data"][0]);
-            if (this.liftData_index.length > 0) {
-                console.log('recieved lift data')
-                this.chartLabels_lift = this.liftData_index;
-                this.chartDatasets_lift[0]['data'] = this.liftData_model
-                this.chartDatasets_lift[1]['data'] = this.liftData_wizard
-                this.chartDatasets_lift[2]['data'] = this.liftData_random
+            this.numofcols =  data['debrief']['Lift']['columes'].length;
+           
+        
+            //get first element x from each array
+            var colBase = 0;
+            for (var x = 0; x < number_of_cols_lift; x++) {
 
-                this.chartDatasets_lift[0]['label'] = this.liftLabels[1];
-                this.chartDatasets_lift[1]['label'] = this.liftLabels[2];
-                this.chartDatasets_lift[2]['label'] = this.liftLabels[3];
-                this.liftFlag = true;
-            }else{
-                this.liftFlag = false;
-            }
-
-            //getting data from json server for gain
-            this.gainLabels = data["gain"]["cols"];
-            this.gainData_index = data["gain"]["data"][0];
-            this.gainData_index = this.addPercent(this.gainData_index);
-         
-            this.gainData_model = data["gain"]["data"][1];
-            this.gainData_wizard = data["gain"]["data"][2];
-            this.gainData_random = data["gain"]["data"][3];
-
-
-            if (this.gainData_index.length > 0) {
-                console.log('recieved gain data')
-
-                this.chartLabels = this.gainData_index;
-                this.chartDatasets[0]['data'] = this.gainData_model
-                this.chartDatasets[1]['data'] = this.gainData_wizard
-                this.chartDatasets[2]['data'] = this.gainData_random
-
-                this.chartDatasets[0]['label'] = this.gainLabels[1];
-                this.chartDatasets[1]['label'] = this.gainLabels[2];
-                this.chartDatasets[2]['label'] = this.gainLabels[3];
-                this.gainFlag = true;
-
-
+                this.chartLabels.push(data['debrief']['Lift']['rows'][x][0] + '%');
+                this.dataObj(colBase, number_of_cols_lift, data, 'Lift');
+                colBase++;
 
             }
 
-            //getting data from json server for gain
-            this.cmLabels = data["cm"]["cols"];
-            this.cmData1 = data["cm"]["data"][0];
-            this.cmData2 = data["cm"]["data"][1];
-            this.cmData3 = data["cm"]["data"][2];
+            colBase = 0;
+            for (var x = 0; x < number_of_cols_gain; x++) {
 
-            this.cmTotal += parseInt(this.cmData2[0]) + parseInt(this.cmData2[1]) + parseInt(this.cmData3[0]) + parseInt(this.cmData3[1])
+                this.chartLabels2.push(data['debrief']['Gain']['rows'][x][0] + '%');
+                this.dataObj(colBase, number_of_cols_gain, data, 'Gain');
+                colBase++;
+
+            }
+
+            //Confusion Matrix Logic
+            this.cmCols = data['debrief']['Confusion_Matrix']['columes'];
+            this.cmRows = data['debrief']['Confusion_Matrix']['rows'];
+
+
+            //Sample Data
+            this.sampleData_cols =  data['sample']['src']['columes'];
+            this.sampleData_rows =  data['sample']['src']['rows'];
+            this.numRowsSampleData = this.sampleData_rows.length;
             
             
+            //console.log(this.chartLabels)
 
-            if (this.cmLabels.length > 0) {
-
-                console.log('recieved cm data')
-
-
+            if (this.chartLabels.length > 0) {
+                this.chartFlag = true;
             }
 
-        //sample-data_1
-        this.sampleDataLabels = data["sample_data_1"]["cols"];
-        this.samepleData_1 = data["sample_data_1"]["data"][0];
-
-        
-        if (this.sampleDataLabels.length > 0) {
-
-            console.log('recieved table data')
+            if (this.chartLabels2.length > 0) {
+                this.chartFlag2 = true;
+            }
 
 
-        }
-        
-        
+        });//end forEach
 
-
-        }); //end foreach
-
-        //load the charts with new data
 
 
     }//end ngOnInit
 
-    // public calCMTotal(cmVar){
-    //     this.cmTotal += parseInt(cmVar);
+    public dataObj(colBase, number_of_cols, data, chartName) {
+        var d = []; // array for data
 
-    // }
+        for (var x = 0; x < number_of_cols; x++) {
+            //get data for object
+            d.push(data['debrief'][chartName]['rows'][x][colBase])
 
-    
 
-    public addPercent(labels){
-        var newLabels = [];
-        labels.forEach((item) =>{
-            newLabels.push(item + '%');
-        });
-        return newLabels;
+        }
+
+        //create object     
+        var obj = { data: d, label: data['debrief'][chartName]['columes'][colBase] };
+        // console.log(obj)
+        //add object to chart data 
+        if (obj.label == 'Index' || obj.label == null) {
+            return;
+        }
+
+        if (chartName == 'Lift') {
+            this.chartDatasets.push(obj);
+            //create the css for each
+            this.chartColors.push(this.createCSSForChart(colBase + 1)); // + 1 to not select empty index
+        }
+
+        if (chartName == 'Gain') {
+            this.chartDatasets2.push(obj);
+            //create the css for each
+            this.chartColors2.push(this.createCSSForChart(colBase + this.numofcols )); // + 3 to select different colors
+        }
 
     }
 
-}
+
+    public createCSSForChart(index) {
+
+        var colors = [' ', 'red', 'green', 'blue', 'purple', 'yellow', 'orange', 'brown', 'yellow', 'grey'];
+
+        //var randomColor = colors[Math.floor(Math.random()*colors.length)];
+        var color = colors[index];
+
+        var cssObj = {
+            backgroundColor: 'transparent',
+            borderColor: color,
+            borderWidth: 6,
+            pointBackgroundColor: color,
+            pointBorderColor: color,
+            pointHoverBackgroundColor: color,
+            pointHoverBorderColor: color
+        };
+
+        //logic to prevent color from getting picked again
+        //console.log(cssObj);
+
+        return cssObj;
+
+
+    }//endcreateCss
+
+
+      
+
+}//end class
